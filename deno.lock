@@ -4,6 +4,7 @@
     "npm:@clerk/nextjs@^6.3.4": "6.3.4_next@15.0.2__react@19.0.0-rc-02c0e824-20241028__react-dom@19.0.0-rc-02c0e824-20241028___react@19.0.0-rc-02c0e824-20241028_react@19.0.0-rc-02c0e824-20241028_react-dom@19.0.0-rc-02c0e824-20241028__react@19.0.0-rc-02c0e824-20241028",
     "npm:@clerk/themes@^2.1.45": "2.1.45",
     "npm:@hookform/resolvers@^3.9.1": "3.9.1_react-hook-form@7.53.2__react@18.3.1",
+    "npm:@prisma/client@^5.22.0": "5.22.0_prisma@5.22.0",
     "npm:@radix-ui/react-accordion@^1.2.1": "1.2.1_@types+react@18.3.12_@types+react-dom@18.3.1_react@19.0.0-rc-02c0e824-20241028_react-dom@19.0.0-rc-02c0e824-20241028__react@19.0.0-rc-02c0e824-20241028",
     "npm:@radix-ui/react-alert-dialog@^1.1.2": "1.1.2_@types+react@18.3.12_@types+react-dom@18.3.1_react@19.0.0-rc-02c0e824-20241028_react-dom@19.0.0-rc-02c0e824-20241028__react@19.0.0-rc-02c0e824-20241028",
     "npm:@radix-ui/react-aspect-ratio@^1.1.0": "1.1.0_@types+react@18.3.12_@types+react-dom@18.3.1_react@19.0.0-rc-02c0e824-20241028_react-dom@19.0.0-rc-02c0e824-20241028__react@19.0.0-rc-02c0e824-20241028",
@@ -47,6 +48,7 @@
     "npm:next-themes@~0.4.3": "0.4.3_react@19.0.0-rc-02c0e824-20241028_react-dom@19.0.0-rc-02c0e824-20241028__react@19.0.0-rc-02c0e824-20241028",
     "npm:next@15.0.2": "15.0.2_react@19.0.0-rc-02c0e824-20241028_react-dom@19.0.0-rc-02c0e824-20241028__react@19.0.0-rc-02c0e824-20241028",
     "npm:postcss@8": "8.4.47",
+    "npm:prisma@^5.22.0": "5.22.0",
     "npm:react-day-picker@^8.10.1": "8.10.1_date-fns@3.6.0_react@18.3.1",
     "npm:react-dom@19.0.0-rc-02c0e824-20241028": "19.0.0-rc-02c0e824-20241028_react@19.0.0-rc-02c0e824-20241028",
     "npm:react-hook-form@^7.53.2": "7.53.2_react@18.3.1",
@@ -393,6 +395,41 @@
     },
     "@pkgjs/parseargs@0.11.0": {
       "integrity": "sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg=="
+    },
+    "@prisma/client@5.22.0_prisma@5.22.0": {
+      "integrity": "sha512-M0SVXfyHnQREBKxCgyo7sffrKttwE6R8PMq330MIUF0pTwjUhLbW84pFDlf06B27XyCR++VtjugEnIHdr07SVA==",
+      "dependencies": [
+        "prisma"
+      ]
+    },
+    "@prisma/debug@5.22.0": {
+      "integrity": "sha512-AUt44v3YJeggO2ZU5BkXI7M4hu9BF2zzH2iF2V5pyXT/lRTyWiElZ7It+bRH1EshoMRxHgpYg4VB6rCM+mG5jQ=="
+    },
+    "@prisma/engines-version@5.22.0-44.605197351a3c8bdd595af2d2a9bc3025bca48ea2": {
+      "integrity": "sha512-2PTmxFR2yHW/eB3uqWtcgRcgAbG1rwG9ZriSvQw+nnb7c4uCr3RAcGMb6/zfE88SKlC1Nj2ziUvc96Z379mHgQ=="
+    },
+    "@prisma/engines@5.22.0": {
+      "integrity": "sha512-UNjfslWhAt06kVL3CjkuYpHAWSO6L4kDCVPegV6itt7nD1kSJavd3vhgAEhjglLJJKEdJ7oIqDJ+yHk6qO8gPA==",
+      "dependencies": [
+        "@prisma/debug",
+        "@prisma/engines-version",
+        "@prisma/fetch-engine",
+        "@prisma/get-platform"
+      ]
+    },
+    "@prisma/fetch-engine@5.22.0": {
+      "integrity": "sha512-bkrD/Mc2fSvkQBV5EpoFcZ87AvOgDxbG99488a5cexp5Ccny+UM6MAe/UFkUC0wLYD9+9befNOqGiIJhhq+HbA==",
+      "dependencies": [
+        "@prisma/debug",
+        "@prisma/engines-version",
+        "@prisma/get-platform"
+      ]
+    },
+    "@prisma/get-platform@5.22.0": {
+      "integrity": "sha512-pHhpQdr1UPFpt+zFfnPazhulaZYCUqeIcPpJViYoq9R+D/yw4fjE+CtnsnKzPYm0ddUbeXUzjGVGIRVgPDCk4Q==",
+      "dependencies": [
+        "@prisma/debug"
+      ]
     },
     "@radix-ui/number@1.1.0": {
       "integrity": "sha512-V3gRzhVNU1ldS5XhAPTom1fOIo4ccrjjJgmE+LI2h/WaFpHmx0MQApT+KZHnx8abG6Avtfcz4WoEciMnpFT3HQ=="
@@ -3120,6 +3157,13 @@
     "prelude-ls@1.2.1": {
       "integrity": "sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g=="
     },
+    "prisma@5.22.0": {
+      "integrity": "sha512-vtpjW3XuYCSnMsNVBjLMNkTj6OZbudcPPTPYHqX0CJfpcdWciI1dM8uHETwmDxxiqEwCIE6WvXucWUetJgfu/A==",
+      "dependencies": [
+        "@prisma/engines",
+        "fsevents"
+      ]
+    },
     "prop-types@15.8.1": {
       "integrity": "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==",
       "dependencies": [
@@ -3932,6 +3976,7 @@
         "npm:@clerk/nextjs@^6.3.4",
         "npm:@clerk/themes@^2.1.45",
         "npm:@hookform/resolvers@^3.9.1",
+        "npm:@prisma/client@^5.22.0",
         "npm:@radix-ui/react-accordion@^1.2.1",
         "npm:@radix-ui/react-alert-dialog@^1.1.2",
         "npm:@radix-ui/react-aspect-ratio@^1.1.0",
@@ -3975,6 +4020,7 @@
         "npm:next-themes@~0.4.3",
         "npm:next@15.0.2",
         "npm:postcss@8",
+        "npm:prisma@^5.22.0",
         "npm:react-day-picker@^8.10.1",
         "npm:react-dom@19.0.0-rc-02c0e824-20241028",
         "npm:react-hook-form@^7.53.2",
