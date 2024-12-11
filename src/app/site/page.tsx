@@ -76,7 +76,7 @@ export default function Home() {
                   href={`/agency?plan=${el.priceId}`}
                   className={clsx(
                     "w-full text-center bg-primary p-2 rounded-md",
-                    { "!bg-muted-foreground": el.title !== "Unlimited Saas" }
+                    { "!bg-muted-foreground": el.title !== "Unlimited Saas" },
                   )}
                 >
                   Get Started

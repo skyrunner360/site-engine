@@ -12,16 +12,17 @@ const Page = async ({
   const agencyId = await verifyAndAcceptInvitation();
 
   const user = await getAuthUserDetails();
+  const { plan, state, code } = await searchParams;
   if (agencyId) {
     if (user?.role === "SUBACCOUNT_GUEST" || user?.role === "SUBACCOUNT_USER") {
       return redirect("/subaccount");
     } else if (user?.role === "AGENCY_ADMIN" || user?.role === "AGENCY_OWNER") {
-      if (searchParams.plan) {
+      if (plan) {
         return redirect(
           `/agency/${agencyId}/billing?plan=${searchParams.plan}`
         );
       }
-      if (searchParams.state) {
+      if (state) {
         const statePath = searchParams.state.split("___")[0];
         const stateAgencyId = searchParams.state.split("___")[1];
         if (!stateAgencyId) return <div>Not authorized. Unauthorized</div>;

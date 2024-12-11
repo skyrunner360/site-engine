@@ -3,6 +3,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Agency } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { v4 } from "uuid";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -42,6 +43,7 @@ import {
   initUser,
   saveActivityLogNotification,
   updateAgencyDetails,
+  upsertAgency,
 } from "@/lib/queries";
 import { Button } from "../ui/button";
 import Loading from "../global/loading";
@@ -121,8 +123,44 @@ const AgencyDetails = ({ data }: Props) => {
           },
         };
         newUserData = await initUser({ role: "AGENCY_OWNER" });
+        // if (!data?.customerId && !custId) return;
+        if (!data?.id) {
+          const response = await upsertAgency({
+            id: data?.id ? data.id : v4(),
+            // customerId: data?.customerId || custId || "",
+            address: values.address,
+            agencyLogo: values.agencyLogo,
+            city: values.city,
+            companyPhone: values.companyPhone,
+            country: values.country,
+            name: values.name,
+            state: values.state,
+            whiteLabel: values.whiteLabel,
+            zipCode: values.zipCode,
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            companyEmail: values.companyEmail,
+            connectAccountId: "",
+            goal: 5,
+          });
+        }
+        toast({
+          title: "Created Agency",
+        });
+        return router.refresh();
+        // if (data?.id)
+        // if (response) {
+        //   return router.refresh();
+        // }
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+      toast({
+        title: "OOps!!",
+        description: "Could not create your Agency.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleDeleteAgency = async () => {

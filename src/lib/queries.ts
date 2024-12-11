@@ -226,5 +226,8 @@ export const upsertAgency = async (agency: Agency, price: Plan) => {
         },
       },
     });
-  } catch (error) {}
+    return agencyDetail;
+  } catch (error) {
+    console.log(error);
+  }
 };
