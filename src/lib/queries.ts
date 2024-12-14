@@ -64,7 +64,7 @@ export const saveActivityLogNotification = async ({
   if (!foundAgencyId) {
     if (!subaccountId) {
       throw new Error(
-        "You need to provide atleast an agency Id or a subaccount Id"
+        "You need to provide atleast an agency Id or a subaccount Id",
       );
     }
     const response = await db.subAccount.findUnique({
@@ -144,7 +144,7 @@ export const verifyAndAcceptInvitation = async () => {
 
 export const updateAgencyDetails = async (
   agencyId: string,
-  agencyDetails: Partial<Agency>
+  agencyDetails: Partial<Agency>,
 ) => {
   const response = await db.agency.update({
     where: { id: agencyId },
@@ -227,6 +227,21 @@ export const upsertAgency = async (agency: Agency, price: Plan) => {
       },
     });
     return agencyDetail;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getNotificationAndUser = async (agencyId: string) => {
+  try {
+    const response = await db.notification.findMany({
+      where: {
+        agencyId,
+      },
+      include: { User: true },
+      orderBy: { createdAt: "desc" },
+    });
+    return response;
   } catch (error) {
     console.log(error);
   }
