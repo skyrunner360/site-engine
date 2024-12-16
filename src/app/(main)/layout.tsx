@@ -4,7 +4,9 @@ import React from "react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ClerkProvider appearance={{ baseTheme: dark }}>{children}</ClerkProvider>
+    <ClerkProvider appearance={{ baseTheme: dark }} afterSignOutUrl={"/"}>
+      {children}
+    </ClerkProvider>
   );
 };
 
