@@ -262,11 +262,11 @@ function MenuOptions({
                     return (
                       <CommandItem
                         key={opts.id}
-                        className="md:w-[320px] w-full"
+                        className="md:w-[320px] w-full dark:hover:text-black "
                       >
                         <Link
                           href={opts.link}
-                          className="flex items-center gap-2 hover:bg-transparent rounded-md transition-all md:w-full w-[320px]"
+                          className="flex items-center gap-2 hover:bg-transparent rounded-md  transition-all md:w-full w-[320px]"
                         >
                           {val}
                           <span>{opts.name}</span>
