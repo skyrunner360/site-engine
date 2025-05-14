@@ -229,7 +229,8 @@ export const upsertAgency = async (agency: Agency, price?: Plan) => {
     });
     return agencyDetail;
   } catch (error) {
-    console.log(error);
+    // @ts-expect-error display whole error stack instead of a one liner
+    console.log(error?.stack);
   }
 };
 
