@@ -41,7 +41,7 @@ export default function Home() {
           {" you're"} not <br />
           ready to commit you can get started for free.
         </p>
-        <div className="flex justify-center  gap-4 flex-wrap mt-6">
+        <div className="flex justify-center  gap-4 flex-wrap mt-6" id="pricing">
           {pricingCards.map((el) => (
             <Card
               key={el.title}
@@ -76,7 +76,7 @@ export default function Home() {
                   href={`/agency?plan=${el.priceId}`}
                   className={clsx(
                     "w-full text-center bg-primary p-2 rounded-md",
-                    { "!bg-muted-foreground": el.title !== "Unlimited Saas" },
+                    { "!bg-muted-foreground": el.title !== "Unlimited Saas" }
                   )}
                 >
                   Get Started

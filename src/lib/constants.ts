@@ -31,7 +31,7 @@ import Warning from "@/components/icons/warning";
 export const pricingCards = [
   {
     title: "Starter",
-    description: "Perfect for trying out plura",
+    description: "Perfect for trying out Site Engine",
     price: "Free",
     duration: "",
     highlight: "Key features",
